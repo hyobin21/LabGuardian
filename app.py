@@ -125,8 +125,21 @@ st.markdown("""
 KST = pytz.timezone('Asia/Seoul')
 live_now_kst = datetime.now(KST)
 
+#  [새로운 코드 구역] - 지운 자리에 그대로 붙여넣으세요!
+import os
+import urllib.request
+
+#  깃허브 Releases 자료실의 다운로드 링크 주소란 (gas_model.pkl 파일이 올라가 있어야 함)
+MODEL_URL = "https://github.com/hyobin21/LabGuardian/releases/download/v1.0/gas_model.pkl"
+
 @st.cache_resource
 def load_enterprise_models():
+    # 1. 대용량 파일이 서버에 없으면 자료실의 자료를 다운로드 받아온다.
+    if not os.path.exists('gas_model.pkl'):
+        with st.spinner("서버에서 대용량 AI 원본 가중치를 안전하게 수신 중입니다..."):
+            urllib.request.urlretrieve(MODEL_URL, 'gas_model.pkl')
+            
+    # 2. 다운로드가 완료되면 안전하게 파일들을 로드합니다.
     g_model = joblib.load('gas_model.pkl')
     b_model = joblib.load('behavior_model.pkl')
     g_scaler = joblib.load('gas_scaler.pkl') 
