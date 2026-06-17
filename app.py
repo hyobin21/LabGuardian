@@ -313,10 +313,10 @@ else:
 group_meta = {
     0: {"name": "정상 상태", "behavior": "실험실 내부 대기 인프라가 안전 범위 내에서 통제됨.", "recommend": "상시 표준 환기 시스템 가동.", "color": "🟢 안전", "badge_color": "#10B981", "bg": "#E6F4EA"},
     1: {"name": "유기용매 노출", "behavior": "폐액통 밀폐 상태 불량 혹은 유기용매 휘발 포착.", "recommend": "폐액 보관함 덮개 밀폐 여부 전수조사.", "color": "🟡 주의", "badge_color": "#F59E0B", "bg": "#FFF7ED"},
-    2: {"name": "야간 잔류형", "behavior": "야간 무인 가동 장비 이상 유출 발생 후 가스 체류 중.", "recommend": "공조 배기 인프라 최고 출력 원격 시동.", "color": "🔴 위험", "badge_color": "#EF4444", "bg": "#FEF2F2"},
-    3: {"name": "장기 노출형", "behavior": "초록-노랑 경계면 상에서 미세 누출 진동이 30분 이상 반복됨.", "recommend": "시약장 배관 피팅 노후화 크랙 점검 요망.", "color": "🔴 위험", "badge_color": "#DC2626", "bg": "#FEF2F2"},
-    4: {"name": "독성가스 우세형", "behavior": "치명적 신경독성/질식 가스(CO, 톨루엔) 유출 감지.", "recommend": "메인 가스 실린더 솔레노이드 밸브 강제 셧다운.", "color": "🔴 위험", "badge_color": "#EF4444", "bg": "#FEF2F2"},
-    999: {"name": "치명적 복합 유출", "behavior": "특정 가스가 인체 마비 임계치를 초과하여 관제판 전체에 최고 등급 비상 신호 감지됨.", "recommend": "실험실 내부 인원 즉시 대피 및 원격 솔레노이드 밸브 차단 강제 집행.", "color": "⚫ 비상", "badge_color": "#000000", "bg": "#FEF2F2"}
+    2: {"name": "야간 잔류형", "behavior": "야간 무인 가동 장비 이상 유출 발생 후 가스 체류 중. 야간 담당 책임 연구원 관리 소홀 의심", "recommend": " 야간 담당 연구원의 메뉴얼 숙지 및 공조 배기 인프라 최고 출력 원격 시동.", "color": "🔴 위험", "badge_color": "#EF4444", "bg": "#FEF2F2"},
+    3: {"name": "장기 노출형", "behavior": "작업자가 유해가스 환경에 장시간 노출된 것으로 판단됨. 용매 뚜껑 밀폐 여부 의심.", "recommend": "용매 뚜껑 밀폐 여부 확인 및 시약장 배관 피팅 노후화 크랙 점검 요망. 휴식 및 작업자 교대 권고.", "color": "🔴 위험", "badge_color": "#DC2626", "bg": "#FEF2F2"},
+    4: {"name": "독성가스 우세형", "behavior": "치명적 신경독성/질식 가스(CO, 톨루엔) 유출 감지. 독성 물질의 관리 미흡 의심", "recommend": "환기 및 독성 물질 보관 상태 점검 필요.", "color": "🔴 위험", "badge_color": "#EF4444", "bg": "#FEF2F2"},
+    999: {"name": "치명적 복합 유출", "behavior": "특정 가스가 인체 마비 임계치를 초과하여 관제판 전체에 최고 등급 비상 신호 감지됨.", "recommend": "실험실 내부 인원 즉시 대피 및 관리자 호출.", "color": "⚫ 비상", "badge_color": "#000000", "bg": "#FEF2F2"}
 }
 
 is_solvent_active = (gas_status_matrix["에탄올"] != "🟢 안전" or gas_status_matrix["아세톤"] != "🟢 안전")
