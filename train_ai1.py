@@ -5,7 +5,7 @@ import os
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
-from sklearn.preprocessing import StandardScaler  # 🔥 성능 향상을 위한 스케일러 추가!
+from sklearn.preprocessing import StandardScaler  # 성능 향상을 위한 스케일러 추가
 
 # 6가지 가스 이름 표준 매핑 (UCI 데이터셋 공식 ID 1~6 기준)
 GAS_NAMES = [
